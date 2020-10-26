@@ -1,6 +1,6 @@
 # Xiaomi Mi Temperature and Humidity Monitor 2 - Domoticz
 
-[![Python](https://img.shields.io/badge/python-3-brightgreen.svg)]()![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc)![downloads](https://img.shields.io/github/downloads/erdose/xiaomi-mi-lywsd03mmc/total)![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
+![Python](https://img.shields.io/badge/python-3-brightgreen.svg) ![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc) ![downloads](https://img.shields.io/github/downloads/erdose/xiaomi-mi-lywsd03mmc/total) ![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
 
 The Xiaomi Mi sensor provides temperature and humidity over BLE.
 
@@ -74,9 +74,9 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    ```python
    # sensor dictionary to add own sensors
    # if you don't want to use the raw voltage option, just write -1 in the VOLTAGE_IDX value field
-   sensors = { 1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1},
-   			2: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 2, "VOLTAGE_IDX": -1},
-   			3: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 3, "VOLTAGE_IDX": -1}}
+   sensors = {     1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1},
+   		2: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 2, "VOLTAGE_IDX": -1},
+   		3: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 3, "VOLTAGE_IDX": -1}}
    ```
 
 4. ##### Schedule the update interval
@@ -93,4 +93,4 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    */5 * * * * python3 /home/pi/xiaomi-mi-lywsd03mmc/xiaomiBleLywsd03mmc.py
    ```
 
-   Done! 
+   Done!
