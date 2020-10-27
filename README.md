@@ -48,8 +48,14 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
 
    ```shell
    sudo apt update
-   sudo apt install -y python3 pip3 git
-   sudo pip3 install pycopy-binascii requests logging bluepy
+   sudo apt upgrade
+   ```
+
+   Wait a minute...
+
+   ```shell
+   sudo apt install -y python3 python3-pip git
+   sudo pip3 install requests bluepy
    ```
 
 4. ##### Edit the *xiaomiBleLywsd03mmc.py* script
