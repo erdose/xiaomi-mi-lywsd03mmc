@@ -58,7 +58,7 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    sudo pip3 install requests bluepy
    ```
 
-4. ##### Edit the *xiaomiBleLywsd03mmc.py* script
+4. ##### Edit the *config.py* script
 
    Clone repository:
 
@@ -66,11 +66,11 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    git clone https://github.com/erdose/xiaomi-mi-lywsd03mmc.git
    ```
 
-   Open the ***xiaomiBleLywsd03mmc.py*** and edit the parameters at the top of the script!
+   Open the ***config.py*** and edit the parameters at the top of the script!
 
    ```shell
    cd xiaomi-mi-lywsd03mmc
-   sudo nano xiaomiBleLywsd03mmc.py
+   sudo nano config.py
    ```
 
    ```python
