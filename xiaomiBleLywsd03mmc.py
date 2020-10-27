@@ -43,28 +43,28 @@ class TempHumDelegate(DefaultDelegate):
 		if (sensor_id != -1 and batteryLevel > -1):
 			for number, sensor in sensors.items():
 				if sensor['TH_IDX'] == sensor_id:
-					request_url = create_TH_request(DOMOTICZ_SERVER_IP,DOMOTICZ_SERVER_PORT,str(sensor_id),str(temperature),str(humidity),comfort_type,str(batteryLevel))
+					request_url = create_TH_request(DOMOTICZ_SERVER_IP,DOMOTICZ_SERVER_PORT,sensor_id,temperature,humidity,comfort_type,batteryLevel)
 					send_to_domoticz(request_url)
 					if sensor['VOLTAGE_IDX'] != -1:
-						request_url = create_VOLTAGE_request(DOMOTICZ_SERVER_IP,DOMOTICZ_SERVER_PORT,str(sensor['VOLTAGE_IDX']),str(voltage))
+						request_url = create_VOLTAGE_request(DOMOTICZ_SERVER_IP,DOMOTICZ_SERVER_PORT,sensor['VOLTAGE_IDX'],voltage)
 						send_to_domoticz(request_url)
 
 def create_TH_request(server, port, idx, temp, hum, comfort, battery)
 	url = ''
 	url = (
-			f"http://{server}:{port}"
-			f"/json.htm?type=command&param=udevice&idx={idx}"
-			f"&nvalue=0&svalue={temp};{hum};{comfort_type}"
-			f"&battery={battery}")
+		f"http://{server}:{port}"
+		f"/json.htm?type=command&param=udevice&idx={idx}"
+		f"&nvalue=0&svalue={temp};{hum};{comfort_type}"
+		f"&battery={battery}")
 	logging.debug(f"The request is {url}")
 	return url
 
 def create_VOLTAGE_request(server, port, idx, voltage)
 	url = ''
 	url = (
-			f"http://{server}:{port}"
-			f"/json.htm?type=command&param=udevice&idx={idx}"
-			f"&nvalue=0&svalue={voltage}")
+		f"http://{server}:{port}"
+		f"/json.htm?type=command&param=udevice&idx={idx}"
+		f"&nvalue=0&svalue={voltage}")
 	logging.debug(f"The request is {url}")
 	return url
 
