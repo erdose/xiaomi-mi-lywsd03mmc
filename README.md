@@ -42,7 +42,17 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
 
    Note down the MAC address!
 
-3. ##### Edit the xiaomiBleLywsd03mmc.py script
+3. ##### Prepare the required modules
+
+   Install modules:
+
+   ```shell
+   sudo apt update
+   sudo apt install -y python3 pip3 git
+   sudo pip3 install pycopy-binascii requests logging bluepy
+   ```
+
+4. ##### Edit the *xiaomiBleLywsd03mmc.py* script
 
    Clone repository:
 
@@ -65,11 +75,11 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    DOMOTICZ_PASSWORD = ""
    ```
 
-   *MAC* : MAC address of the Xiaomi Mi sensor.
+   ***MAC*** : MAC address of the Xiaomi Mi sensor.
 
-   *TH_IDX* : IDX value of the Temperature & Humidity sensor(s) in Domoticz.
+   ***TH_IDX*** : IDX value of the Temperature & Humidity sensor(s) in Domoticz.
 
-   *VOLTAGE_IDX* : IDX value of the Voltage sensor(s) in Domoticz.
+   ***VOLTAGE_IDX*** : IDX value of the Voltage sensor(s) in Domoticz.
 
    ```python
    # sensor dictionary to add own sensors
@@ -79,7 +89,14 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    		3: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 3, "VOLTAGE_IDX": -1}}
    ```
 
-4. ##### Schedule the update interval
+   ***TEMPERATURE_PREC***: Accuracy of the temperature value.
+
+   ```python
+   # other configuration
+   TEMPERATURE_PREC = 2
+   ```
+
+5. ##### Schedule the update interval
 
    Enable the script to run at a regular interval (5 mins):
 
