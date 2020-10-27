@@ -17,6 +17,11 @@ sensors = { 	1: {'MAC': 'xx:xx:xx:xx:xx:xx', 'TH_IDX': 1, 'VOLTAGE_IDX': -1},
 		2: {'MAC': 'xx:xx:xx:xx:xx:xx', 'TH_IDX': 2, 'VOLTAGE_IDX': -1},
 		3: {'MAC': 'xx:xx:xx:xx:xx:xx', 'TH_IDX': 3, 'VOLTAGE_IDX': -1}}
 
+# other configuration
+TEMPERATURE_PREC = 2
+
+
+
 battery_level = -1
 sensor_id = -1
 
@@ -25,7 +30,7 @@ class TempHumDelegate(DefaultDelegate):
 		DefaultDelegate.__init__(self)
 
 	def handleNotification(self, cHandle, data):
-		temperature = int.from_bytes(data[0:2],byteorder='little',signed=True)/100
+		temperature = round(int.from_bytes(data[0:2],byteorder='little',signed=True)/100, TEMPERATURE_PREC)
 		logging.debug(f"Temp: {temperature}")
 		humidity = int.from_bytes(data[2:3],byteorder='little')
 		logging.debug(f"Hum: {humidity}")
