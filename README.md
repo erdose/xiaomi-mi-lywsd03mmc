@@ -107,7 +107,7 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    Enable the script to run at a regular interval (5 mins):
 
    ```shell
-   sudo crontab -e
+   sudo nano crontab -e
    ```
 
    Add this line:
