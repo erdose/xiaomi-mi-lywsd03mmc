@@ -102,6 +102,16 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    TEMPERATURE_PREC = 2
    ```
 
+   ***LOG_FILE_NAME***: The name of the log file.
+
+   ***LOG_FILE_SIZE***: The size of the log file in bytes.
+
+   ```python
+   # Logfile configuration
+   LOG_FILE_NAME = 'loginfo.log'
+   LOG_FILE_SIZE = 1024	# file size in bytes
+   ```
+
 5. ##### Schedule the update interval
 
    Enable the script to run at a regular interval (5 mins):
