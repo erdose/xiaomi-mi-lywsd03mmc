@@ -75,14 +75,17 @@ def handle_temp_hum_value():
 Creates a rotating log
 """
 logger = logging.getLogger("Rotating Log")
+formatter = logging.Formatter(fmt="%(asctime)s %(levelname)-8s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 logger.setLevel(logging.INFO)
 
 # add a rotating handler
-handler = RotatingFileHandler(LOG_FILE_NAME, maxBytes=LOG_FILE_SIZE)
+handler = RotatingFileHandler(config.LOG_FILE_NAME, maxBytes=config.LOG_FILE_SIZE, backupCount=1)
+handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-logger.info('Start script...')
+logger.info("***************************************")
+logger.info("Start script...")
 logger.info(	f"Input parameters:\r\n"
 				f"Domoticz Server IP: {config.DOMOTICZ_SERVER_IP}\r\n"
 				f"Domoticz Server Port: {config.DOMOTICZ_SERVER_PORT}\r\n"
