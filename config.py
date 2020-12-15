@@ -12,3 +12,7 @@ sensors = { 1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1},
 
 # other configuration
 TEMPERATURE_PREC = 2
+
+# Logfile configuration
+LOG_FILE_NAME = "loginfo.log"
+LOG_FILE_SIZE = 16384		# file size in bytes
