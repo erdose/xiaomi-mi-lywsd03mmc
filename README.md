@@ -1,6 +1,6 @@
 # Xiaomi Mi Temperature and Humidity Monitor 2 - Domoticz
 
-![Python](https://img.shields.io/badge/python-3-brightgreen.svg) ![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc) ![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
+![release](https://img.shields.io/github/v/tag/erdose/xiaomi-mi-lywsd03mmc?label=release)![Python](https://img.shields.io/badge/python-3-brightgreen.svg) ![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc) ![open_issue](https://img.shields.io/github/issues-raw/erdose/xiaomi-mi-lywsd03mmc)![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
 
 The Xiaomi Mi sensor provides temperature and humidity over BLE.
 
