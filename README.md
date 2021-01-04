@@ -58,6 +58,8 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    sudo pip3 install requests bluepy
    ```
 
+   Check the Python version! It must be at least 3.6 or higher!
+
 4. ##### Edit the *config.py* script
 
    Clone repository:
@@ -120,7 +122,7 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    sudo nano crontab -e
    ```
 
-   Add this line:
+   Add this line (if you use this path):
 
    ```shell
    */5 * * * * cd /home/pi/xiaomi-mi-lywsd03mmc && python3 xiaomiBleLywsd03mmc.py
