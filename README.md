@@ -125,7 +125,7 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    Add this line (if you use this path):
 
    ```shell
-   */5 * * * * cd /home/pi/xiaomi-mi-lywsd03mmc && python3 xiaomiBleLywsd03mmc.py
+   */5 * * * * cd /home/pi/xiaomi-mi-lywsd03mmc && timeout -k 10 60 python3 xiaomiBleLywsd03mmc.py
    ```
 
    Done!
