@@ -3,6 +3,7 @@
 ![release](https://img.shields.io/github/v/tag/erdose/xiaomi-mi-lywsd03mmc?label=release) ![Python](https://img.shields.io/badge/python-3.6-brightgreen.svg) ![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc) ![open_issue](https://img.shields.io/github/issues-raw/erdose/xiaomi-mi-lywsd03mmc) ![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
 
 The Xiaomi Mi sensor provides temperature and humidity over BLE.
+This script supports the ATC custom firmware too!
 
 ![xiaomi_mi_2](Pictures/mi-temperature-and-humidity-monitor-2.jpg)
 
@@ -36,9 +37,8 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    LE Scan ...
    46:4D:55:28:41:CA (unknown)
    A4:C1:38:DC:8F:2E LYWSD03MMC
+   A4:C1:38:4D:D5:F0 ATC_4DD5F0
    ```
-
-   The name is always LYWSD03MMC.
 
    Note down the MAC address!
 
@@ -92,9 +92,9 @@ The Xiaomi Mi sensor provides temperature and humidity over BLE.
    ```python
    # sensor dictionary to add own sensors
    # if you don't want to use the raw voltage option, just write -1 in the VOLTAGE_IDX value field
-   sensors = {     1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1},
-   		2: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 2, "VOLTAGE_IDX": -1},
-   		3: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 3, "VOLTAGE_IDX": -1}}
+   sensors = {     1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1, "UPDATED": False},
+   		2: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 2, "VOLTAGE_IDX": -1, "UPDATED": False},
+   		3: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 3, "VOLTAGE_IDX": -1, "UPDATED": False}}
    ```
 
    ***TEMPERATURE_PREC***: Accuracy of the temperature value.
