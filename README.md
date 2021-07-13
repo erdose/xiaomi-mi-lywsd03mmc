@@ -3,7 +3,8 @@
 ![release](https://img.shields.io/github/v/tag/erdose/xiaomi-mi-lywsd03mmc?label=release) ![Python](https://img.shields.io/badge/python-3.6-brightgreen.svg) ![license](https://img.shields.io/github/license/erdose/xiaomi-mi-lywsd03mmc) ![open_issue](https://img.shields.io/github/issues-raw/erdose/xiaomi-mi-lywsd03mmc) ![closed_issue](https://img.shields.io/github/issues-closed-raw/erdose/xiaomi-mi-lywsd03mmc)
 
 The Xiaomi Mi sensor provides temperature and humidity over BLE.
-This script supports the ATC custom firmware too!
+
+This script also supports the ATC custom firmware!
 
 ![xiaomi_mi_2](Pictures/mi-temperature-and-humidity-monitor-2.jpg)
 
@@ -119,7 +120,7 @@ This script supports the ATC custom firmware too!
    Enable the script to run at a regular interval (5 mins):
 
    ```shell
-   sudo nano crontab -e
+   sudo crontab -e
    ```
 
    Add this line (if you use this path):
