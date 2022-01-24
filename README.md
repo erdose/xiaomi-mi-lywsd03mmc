@@ -5,8 +5,6 @@
 The Xiaomi Mi sensor provides temperature and humidity over BLE.
 
 This script also supports the ATC custom firmware!
-
-This is updated version of script forked from [erdose](https://github.com/erdose/xiaomi-mi-lywsd03mmc), which works correctly with custom [ATC software](https://github.com/pvvx/ATC_MiThermometer).
 Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#advertising-format-of-the-custom-firmware).
 
 ![xiaomi_mi_2](Pictures/mi-temperature-and-humidity-monitor-2.jpg)
