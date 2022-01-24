@@ -37,6 +37,7 @@ class TempHumDelegate(DefaultDelegate):
 	def handleDiscovery(self, dev, isNewDev, isNewData):
 		for (sdid, desc, val) in dev.getScanData():
 			if self.isTemperature(dev.addr, sdid, val):
+				logger.info(f"Discovery data from MAC: {dev.addr.upper()}")
 				bytes = [int(val[i:i+2], 16) for i in range(0, len(val), 2)]
 				temperature = (bytes[8] * 256 + bytes[9]) / 10
 				logger.info(f"Temp: {temperature}")
@@ -49,7 +50,7 @@ class TempHumDelegate(DefaultDelegate):
 				voltage = (bytes[12] * 256 + bytes[13]) / 1000
 				logger.info(f"Voltage: {voltage}")
 				for number, sensor in config.sensors.items():
-					if (sensor['MAC'] == dev.addr) and (sensor['UPDATED'] == False):
+					if (sensor['MAC'].upper() == dev.addr.upper()) and (sensor['UPDATED'] == False):
 						request_url = create_TH_request(config.DOMOTICZ_SERVER_IP,config.DOMOTICZ_SERVER_PORT,sensor['TH_IDX'],temperature,humidity,comfort_type,batteryLevel)
 						send_to_domoticz(request_url)
 						sensor['UPDATED'] = True
