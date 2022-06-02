@@ -164,5 +164,6 @@ for number, sensor in config.sensors.items():
                 if i < tries - 1:  # i is zero indexed
                  logger.info(f"Retrying connection {i}")
                  continue
-            else:
-                 pass
+    except Exception as e:
+      logger.error(str(e))
+      pass  
