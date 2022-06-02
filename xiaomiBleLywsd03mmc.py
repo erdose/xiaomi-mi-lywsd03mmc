@@ -165,4 +165,4 @@ for number, sensor in config.sensors.items():
                  logger.info(f"Retrying connection {i}")
                  continue
             else:
-                pass
+                 pass
