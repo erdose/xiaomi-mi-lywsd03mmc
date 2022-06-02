@@ -146,8 +146,7 @@ except Exception as e:
 
 for number, sensor in config.sensors.items():
     try:
-        tries = 3
-        for i in range(tries):
+        for i in range(config.NUM_RETRY):
             try:
               if sensor['UPDATED'] == False:
                 sensor_id = sensor['TH_IDX']
@@ -161,7 +160,7 @@ for number, sensor in config.sensors.items():
                 p.disconnect()
             except Exception as e:
                 logger.error(str(e))
-                if i < tries - 1:  # i is zero indexed
+                if i < config.NUM_RETRY - 1:  # i is zero indexed
                  logger.info(f"Retrying connection {i}")
                  continue
     except Exception as e:
