@@ -12,6 +12,7 @@ sensors = { 1: {"MAC": "xx:xx:xx:xx:xx:xx", "TH_IDX": 1, "VOLTAGE_IDX": -1, "UPD
 
 # other configuration
 TEMPERATURE_PREC = 2
+NUM_RETRY = 0 #number of connection retries - 0 = retry disabled
 
 # Logfile configuration
 LOG_FILE_NAME = "loginfo.log"

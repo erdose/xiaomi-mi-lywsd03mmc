@@ -145,16 +145,24 @@ except Exception as e:
 	pass
 
 for number, sensor in config.sensors.items():
-	try:
-		if sensor['UPDATED'] == False:
-			sensor_id = sensor['TH_IDX']
-			logger.info(f"TH_IDX:{sensor['TH_IDX']}")
-			p = Peripheral(sensor['MAC'])
-			p.writeCharacteristic(0x0038, b'\x01\x00', True)	  #enable notifications of Temperature, Humidity and Battery voltage
-			p.writeCharacteristic(0x0046, b'\xf4\x01\x00', True)
-			p.withDelegate(TempHumDelegate())
-			handle_temp_hum_value()
-			p.disconnect()
-	except Exception as e:
-		logger.error(str(e))
-		pass
+    try:
+        for i in range(config.NUM_RETRY):
+            try:
+              if sensor['UPDATED'] == False:
+                sensor_id = sensor['TH_IDX']
+                logger.info(f"TH_IDX:{sensor['TH_IDX']}")
+                p = Peripheral(sensor['MAC'])
+                # enable notifications of Temperature, Humidity and Battery voltage
+                p.writeCharacteristic(0x0038, b'\x01\x00', True)
+                p.writeCharacteristic(0x0046, b'\xf4\x01\x00', True)
+                p.withDelegate(TempHumDelegate())
+                handle_temp_hum_value()
+                p.disconnect()
+            except Exception as e:
+                logger.error(str(e))
+                if i < config.NUM_RETRY - 1:  # i is zero indexed
+                 logger.info(f"Retrying connection {i}")
+                 continue
+    except Exception as e:
+      logger.error(str(e))
+      pass  
