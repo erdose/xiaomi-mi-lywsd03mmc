@@ -80,14 +80,14 @@ Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#
    cd xiaomi-mi-lywsd03mmc
    sudo nano config.py
    ```
-
+   ***DOMOTICZ_CREDENTIALS*** : "username : password" encoded in base 64 https://mixedanalytics.com/tools/basic-authentication-generator/ 
    ```python
    # domoticz configuration
    DOMOTICZ_SERVER_IP = "xxx.xxx.x.xxx"
    DOMOTICZ_SERVER_PORT = "xxxx"
-   DOMOTICZ_USERNAME = ""
-   DOMOTICZ_PASSWORD = ""
-   ```
+   # username:password base64 encoded
+   DOMOTICZ_CREDENTIALS = ""
+      ```
 
    ***MAC*** : MAC address of the Xiaomi Mi sensor.
 
