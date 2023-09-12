@@ -23,7 +23,11 @@ Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#
 
    If you want to get the raw voltage of battery, you also need to create the Voltage sensors too. The IDX value of the sensor is also required!
 
-2. ##### Finding the Bluetooth MAC Address of the sensor
+   Enable API Basic Auth
+
+   ![basic auth api](Pictures/domoticz-allow-basic-auth.png)
+
+3. ##### Finding the Bluetooth MAC Address of the sensor
 
    Turn on the Xiaomi Mi sensor (Insert the battery).
 
@@ -44,7 +48,7 @@ Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#
 
    Note down the MAC address!
 
-3. ##### Prepare the required modules
+4. ##### Prepare the required modules
 
    Install modules:
 
@@ -62,7 +66,7 @@ Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#
 
    Check the Python version! It must be at least 3.6 or higher!
 
-4. ##### Edit the *config.py* script
+5. ##### Edit the *config.py* script
 
    Clone repository:
 
@@ -116,7 +120,7 @@ Be sure to select [atc1441 format](https://github.com/atc1441/ATC_MiThermometer#
    LOG_FILE_SIZE = 1024	# file size in bytes
    ```
 
-5. ##### Schedule the update interval
+6. ##### Schedule the update interval
 
    Enable the script to run at a regular interval (5 mins):
 
